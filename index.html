@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Gift for Elizabeth 💗</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- PAGE 1: WELCOME -->
+    <section class="page active" id="welcome">
+        <div class="card">
+            <div class="decoration">🌸 💗 🌸</div>
+            <h1>Hey Elizabeth!</h1>
+            <p class="subtitle">Are you ready for your gift?</p>
+            <p>I have prepared something special for you!</p>
+            <button onclick="showPage('intro')">I'm ready! 💕</button>
+        </div>
+    </section>
+
+    <!-- PAGE 2: INTRODUCTION -->
+    <section class="page" id="intro">
+        <div class="card">
+            <h1>Wait a minute! 🎀</h1>
+            <p>You can't get your gifts that easily!</p>
+            <p>You have to complete a few little challenges first.</p>
+            <p>Are you up for it?</p>
+            <div class="decoration">🧸 ✨ 💗</div>
+            <button onclick="showPage('puzzle')">Let's do this!</button>
+        </div>
+    </section>
+
+    <!-- PAGE 3: PUZZLE GAME -->
+    <section class="page" id="puzzle">
+        <div class="card">
+            <h1>Your first challenge! 🧩</h1>
+            <p>Find all three matching pairs!</p>
+
+            <div class="memory-grid" id="memoryGrid">
+                <button class="memory-card" onclick="flipCard(this)">?</button>
+                <button class="memory-card" onclick="flipCard(this)">?</button>
+                <button class="memory-card" onclick="flipCard(this)">?</button>
+                <button class="memory-card" onclick="flipCard(this)">?</button>
+                <button class="memory-card" onclick="flipCard(this)">?</button>
+                <button class="memory-card" onclick="flipCard(this)">?</button>
+            </div>
+
+            <p id="puzzleMessage">Match the cute pictures!</p>
+            <button id="puzzleNext" class="hidden" onclick="showPage('hug')">
+                Claim your first gift 💗
+            </button>
+        </div>
+    </section>
+
+    <!-- PAGE 4: HUG GIFT -->
+    <section class="page" id="hug">
+        <div class="card">
+            <h1>A BIG HUG FOR YOU!</h1>
+
+            <div class="hug-animation">
+                <span class="bear bear-left">🧸</span>
+                <span class="bear bear-right">🧸</span>
+                <span class="hug-heart">💕</span>
+            </div>
+
+            <p class="subtitle">Sending you the biggest hug ever!</p>
+            <p>Consider this your first gift. 💗</p>
+
+            <button onclick="showPage('gameOne')">Next challenge!</button>
+        </div>
+    </section>
+
+    <!-- PAGE 5: FIRST HEART GAME -->
+    <section class="page" id="gameOne">
+        <div class="card">
+            <h1>Catch the hearts! 💗</h1>
+            <p>Catch 5 moving hearts before time runs out!</p>
+
+            <div class="game-info">
+                <span>Hearts: <b id="scoreOne">0</b>/5</span>
+                <span>Time: <b id="timeOne">30</b>s</span>
+            </div>
+
+            <div class="heart-game" id="heartGameOne">
+                <p class="game-instructions">Press start and catch the hearts!</p>
+            </div>
+
+            <button id="startOne" onclick="startHeartGame(1)">Start game 💕</button>
+
+            <p id="messageOne"></p>
+
+            <button id="nextOne" class="hidden" onclick="showPage('movie')">
+                Continue 💗
+            </button>
+
+            <button id="retryOne" class="hidden" onclick="startHeartGame(1)">
+                Try again ↻
+            </button>
+        </div>
+    </section>
+
+    <!-- PAGE 6: MOVIE NIGHT MESSAGE -->
+    <section class="page" id="movie">
+        <div class="card">
+            <h1>One little thing... 🎬</h1>
+            <div class="decoration">🍿 🎥 💗</div>
+
+            <p class="movie-message">
+                I know I missed our movie night, and I'm sorry.
+                But I really like watching movies with you
+                and spending time with you.
+            </p>
+
+            <p>Those moments mean a lot to me. 💕</p>
+
+            <button onclick="showPage('gameTwo')">One last challenge!</button>
+        </div>
+    </section>
+
+    <!-- PAGE 7: SECOND HEART GAME -->
+    <section class="page" id="gameTwo">
+        <div class="card">
+            <h1>The final challenge! 🌸</h1>
+            <p>Catch 10 hearts in just 20 seconds!</p>
+
+            <div class="game-info">
+                <span>Hearts: <b id="scoreTwo">0</b>/10</span>
+                <span>Time: <b id="timeTwo">20</b>s</span>
+            </div>
+
+            <div class="heart-game" id="heartGameTwo">
+                <p class="game-instructions">Are you fast enough? 💗</p>
+            </div>
+
+            <button id="startTwo" onclick="startHeartGame(2)">Start final game!</button>
+
+            <p id="messageTwo"></p>
+
+            <button id="nextTwo" class="hidden" onclick="showPage('final')">
+                Get your final gift 🎁
+            </button>
+
+            <button id="retryTwo" class="hidden" onclick="startHeartGame(2)">
+                Try again ↻
+            </button>
+        </div>
+    </section>
+
+    <!-- PAGE 8: FINAL GIFT -->
+    <section class="page" id="final">
+        <div class="card">
+            <h1>For you, Elizabeth 💗</h1>
+
+            <div class="decoration">🌹 🌷 🌹</div>
+
+            <h2>You deserve the world!</h2>
+
+            <p class="final-message">
+                I just want you to know how much I appreciate you.
+                I'm really glad I have you in my life.
+                Thank you for all the laughs, memories,
+                and little moments we share.
+            </p>
+
+            <p>I hope this made you smile. 💕</p>
+
+            <div class="decoration">🧸 💗 🧸</div>
+
+            <h2>With love! ❤️</h2>
+
+            <button onclick="showPage('welcome')">Replay the adventure ↻</button>
+        </div>
+    </section>
+
+</body>
+</html>
